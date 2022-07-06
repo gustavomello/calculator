@@ -96,7 +96,7 @@ function cClick(){
         return;
     }
     displayVal = "";
-    display.textContent = queuedOperator;
+    display.textContent = "0";
 }
 
 function acClick(){
