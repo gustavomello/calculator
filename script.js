@@ -81,8 +81,15 @@ function percentageClick(){
 }
 
 function cClick(){
+    if(display.textContent === queuedOperator){
+        queuedOperator = "";
+        displayVal = a;
+        a = "";
+        display.textContent = displayVal;
+        return;
+    }
     displayVal = "";
-    display.textContent = "0";
+    display.textContent = queuedOperator;
 }
 
 function acClick(){
@@ -95,18 +102,6 @@ function acClick(){
 }
 
 function math(a,b,operator){
-    // a = Number(a);
-    // b = Number(b);
-    // if (operator === "+"){displayVal = a + b
-    // }else if (operator === "-"){displayVal = a - b
-    // } else if (operator === "*"){displayVal = a * b
-    // } else if (operator === "/"){displayVal = a / b}
-    // displayVal = Math.round(displayVal * 10000) / 10000;
-    // displayVal = displayVal.toString();
-    // if (displayVal.length > 10) {displayVal = displayVal.toExponential(7)};
-    // display.textContent = displayVal;
-    // console.log("result "+ displayVal)
-
     a = Number(a);
     b = Number(b);
     if (operator === "+"){displayVal = a + b
