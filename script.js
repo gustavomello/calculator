@@ -53,7 +53,7 @@ function operatorClick(){
         a = displayVal;
         displayVal = "";
         display.textContent = this.textContent;
-    } else if (a !== "" && b === ""){
+    } else if (a !== "" && b === "" && queuedOperator !== ""){
         console.log("operator is " + queuedOperator)
         b = displayVal;
         console.log("b = " + b);
@@ -61,6 +61,9 @@ function operatorClick(){
         a = displayVal;
         b = "";
         displayIsResult = true;
+    } else if (a !== "" && b === "" && queuedOperator === "") {
+        queuedOperator=this.textContent;
+        display.textContent = this.textContent;
     }
 
     queuedOperator=this.textContent;
@@ -86,6 +89,10 @@ function cClick(){
         displayVal = a;
         a = "";
         display.textContent = displayVal;
+        return;
+    }
+    if(displayIsResult){
+        queuedOperator = "";
         return;
     }
     displayVal = "";
